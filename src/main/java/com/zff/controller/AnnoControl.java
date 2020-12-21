@@ -3,12 +3,16 @@ package com.zff.controller;
 import com.zff.domain.Account;
 import com.zff.domain.User;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.support.SessionStatus;
 
 import java.util.Map;
 
 @Controller
 @RequestMapping(path = "anno")
+@SessionAttributes(value = {"msg"})
 public class AnnoControl {
     /**
      * 根据RequestParam获取入参 
@@ -115,6 +119,27 @@ public class AnnoControl {
         account.setUser(user);
         System.out.println("show 方法");
         map.put("abc",account);
+    }
+    @RequestMapping(path = "/setSession")
+    public String setSession(Model model){
+        model.addAttribute("msg","好看");
+        return "success";
+
+
+    }
+
+//
+
+    @RequestMapping(path = "/getSession")
+    public String getSession(ModelMap model){
+        model.get("msg");
+        return "success";
+    }
+
+    @RequestMapping(path = "/delSession")
+    public String defSession(SessionStatus model){
+        model.setComplete();
+        return "success";
     }
 }
 

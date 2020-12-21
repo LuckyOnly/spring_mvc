@@ -12,6 +12,11 @@
 </head>
 <body>
 <h3>小程序</h3>
+
+<a href="anno/setSession">设置session</a>
+<a href="anno/getSession">取出session</a>
+<a href="anno/delSession">删除session</a>
+
 <form action="anno/testModelAttribute" method="post">
 
     用户<input type="text" name="username"><br/>

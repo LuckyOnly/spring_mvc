@@ -12,5 +12,7 @@
 </head>
 <body>
 <h3>成功</h3>
+<%--<h3>${requestScope}</h3>--%>
+<h3>${sessionScope}</h3>
 </body>
 </html>
