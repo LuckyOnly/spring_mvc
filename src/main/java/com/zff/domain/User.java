@@ -1,25 +1,20 @@
 package com.zff.domain;
 
 import java.io.Serializable;
+import java.util.Date;
 
 public class User implements Serializable {
-    private String uname;
+
+    private String username;
     private Integer age;
+    private Date birthday;
 
-    @Override
-    public String toString() {
-        return "User{" +
-                "uname='" + uname + '\'' +
-                ", age=" + age +
-                '}';
+    public String getUsername() {
+        return username;
     }
 
-    public String getUname() {
-        return uname;
-    }
-
-    public void setUname(String uname) {
-        this.uname = uname;
+    public void setUsername(String username) {
+        this.username = username;
     }
 
     public Integer getAge() {
@@ -28,5 +23,22 @@ public class User implements Serializable {
 
     public void setAge(Integer age) {
         this.age = age;
+    }
+
+    public Date getBirthday() {
+        return birthday;
+    }
+
+    public void setBirthday(Date birthday) {
+        this.birthday = birthday;
+    }
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "username='" + username + '\'' +
+                ", age=" + age +
+                ", birthday=" + birthday +
+                '}';
     }
 }
