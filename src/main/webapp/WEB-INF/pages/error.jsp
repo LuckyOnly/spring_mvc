@@ -1,19 +1,17 @@
 <%--
   Created by IntelliJ IDEA.
   User: Administrator
-  Date: 2020/10/29
-  Time: 23:42
+  Date: 2021/1/12
+  Time: 22:32
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" isELIgnored="false" %>
 <html>
 <head>
-    <title>成功</title>
+    <title>Title</title>
 </head>
 <body>
-<h3>成功</h3>
-<% System.out.println("success.jsp执行了");%>
-<%--<h3>${requestScope}</h3>--%>
-<h3>${sessionScope}</h3>
+<h3>${errorMsg}</h3>
+<h3>错误页面</h3>
 </body>
 </html>

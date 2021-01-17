@@ -10,6 +10,8 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="fileClient" target="1.5" />
+      <module name="fileupload" target="1.5" />
       <module name="spring_mvc" target="1.5" />
       <module name="testProject" target="1.5" />
     </bytecodeTargetLevel>
