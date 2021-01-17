@@ -58,10 +58,15 @@
     - Declare Spring context listener which sets up the Spring Application Context
     - containing all Cocoon components (and user defined beans as well).
     -->
+  <!--配置spring监听器-->
   <listener>
     <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
   </listener>
-
+  <!--配置加载类路径的配置文件-->
+  <context-param>
+    <param-name>contextConfigLocation1</param-name>
+    <param-value>classpath:applicationContext.xml</param-value>
+  </context-param>
   <!--
     - Declare Spring request listener which sets up the required RequestAttributes
     - to support Springs and Cocoon custom bean scopes like the request scope or the
@@ -77,20 +82,32 @@
     - Servlet that dispatches requests to the Spring managed block servlets
     -->
   <servlet>
+    <!--前端控制器-->
     <description>Cocoon blocks dispatcher</description>
     <display-name>DispatcherServlet</display-name>
     <servlet-name>DispatcherServlet</servlet-name>
     <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+    <!--加载springmvc.xml配置文件-->
     <init-param>
       <param-name>contextConfigLocation</param-name>
       <param-value>classpath:springmvc.xml</param-value>
+
+
     </init-param>
+    <!--配置加载类路径的配置文件-->
+    <init-param>
+      <param-name>contextConfigLocation1</param-name>
+      <param-value>classpath:applicationContext.xml</param-value>
+    </init-param>
+    <!--启动服务器，创建servlet-->
     <load-on-startup>1</load-on-startup>
   </servlet>
   <context-param>
     <param-name>contextConfigLocation</param-name>
     <param-value>classpath:springmvc.xml</param-value>
   </context-param>
+  <!--配置加载类路径的配置文件-->
+
 
   <!-- URL space mappings ============================================= -->
 
@@ -118,5 +135,7 @@
     <filter-name>characterEncodingFilter</filter-name>
     <url-pattern>/*</url-pattern>
   </filter-mapping>
+
+
 </web-app>
         

@@ -13,6 +13,10 @@
 <body>
 <h3>小程序</h3>
 
+<a href="param/findAll">测试</a>
+</br>
+
+
 <a href="anno/setSession">设置session</a>
 <a href="anno/getSession">取出session</a>
 <a href="anno/delSession">删除session</a>
