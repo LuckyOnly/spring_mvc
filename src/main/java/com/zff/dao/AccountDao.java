@@ -8,7 +8,7 @@ import java.util.List;
 
 public interface AccountDao {
     @Insert("insert into account(name,money) values(#{name},#{money})")
-    public void saveAccoun(Account account);
+    public void saveAccount(Account account);
     @Select("select * from account")
     public List<Account> findAll();
 }
