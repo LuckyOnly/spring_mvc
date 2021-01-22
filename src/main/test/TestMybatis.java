@@ -6,12 +6,14 @@ import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 import org.junit.Test;
 import org.apache.ibatis.io.Resources;
 
+
 import java.io.InputStream;
 import java.util.List;
 
 public class TestMybatis {
     @Test
     public void run1() throws Exception{
+
         //加载配置文件
         InputStream in = Resources.getResourceAsStream("SqlMapConfig.xml");
         // 创建factory对象
@@ -21,7 +23,8 @@ public class TestMybatis {
         // 获取代理对象 alt+enter
         AccountDao accountDao = session.getMapper(AccountDao.class);
         //查询所有数据
-        List<Account> accountList=accountDao.findAll();
+//        List<Account> accountList=accountDao.findAll();
+        List<Account> accountList=null;
         for(Account account:accountList){
             System.out.println(accountDao);
         }
@@ -32,6 +35,7 @@ public class TestMybatis {
 
     @Test
     public void run2() throws Exception{
+
         //加载配置文件
         InputStream in = Resources.getResourceAsStream("SqlMapConfig.xml");
         // 创建factory对象
@@ -45,11 +49,11 @@ public class TestMybatis {
         account.setUsername("234");
 
         //查询所有数据
-        accountDao.saveAccount(account);
+//        accountDao.saveAccount(account);
         //提交事务
         session.commit();
         session.close();
         in.close();
+             }
 
-    }
 }
